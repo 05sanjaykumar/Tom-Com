@@ -1,0 +1,85 @@
+web/
+├── .next/                  # Next.js build output (automatically generated)
+├── node_modules/           # Installed npm packages (automatically generated)
+├── public/                 # Static assets (images, fonts, favicons)
+│   └── images/
+│       └── ...
+│
+├── app/                    # Next.js App Router (main application routes)
+│   ├── (auth)/             # Grouped routes for authentication (e.g., /login, /signup)
+│   │   ├── login/
+│   │   │   └── page.tsx
+│   │   ├── signup/
+│   │   │   └── page.tsx
+│   │   └── layout.tsx      # Optional: Shared layout for auth pages
+│   ├── (main)/             # Grouped routes for the main authenticated app
+│   │   ├── dashboard/      # E.g., user's personalized movie feed
+│   │   │   └── page.tsx
+│   │   ├── movies/
+│   │   │   ├── [movieId]/  # Dynamic route for movie details
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── api/
+│   │   │   │       ├── chat/       # API route for AI chat assistant for a specific movie
+│   │   │   │       │   └── route.ts
+│   │   │   │       └── similar/    # API route for fetching similar movies
+│   │   │   │           └── route.ts
+│   │   │   ├── explore/    # Public or genre-based movie exploration
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx  # Optional: Shared layout for movie pages
+│   │   ├── profile/        # User profile and preference settings
+│   │   │   └── page.tsx
+│   │   └── layout.tsx      # Shared layout for authenticated users (e.g., navbar, sidebar)
+│   ├── api/                # Global API routes (e.g., genre scraping, general search)
+│   │   ├── genres/
+│   │   │   └── route.ts    # API route to fetch/scrape genres
+│   │   └── scrape/
+│   │       └── route.ts    # General scraping endpoint (e.g., if a user pastes a direct link)
+│   ├── layout.tsx          # Root layout (e.g., applies to all pages)
+│   ├── page.tsx            # Root page (e.g., landing page before login)
+│   └── globals.css         # Global styles (Tailwind CSS imports)
+│
+├── components/             # Reusable UI components
+│   ├── ui/                 # shadcn/ui components (if using)
+│   │   ├── button.tsx
+│   │   └── ...
+│   ├── movie-card.tsx
+│   ├── genre-selector.tsx
+│   ├── ai-chat-widget.tsx
+│   └── ...
+│
+├── lib/                    # Utility functions, helpers, SDK initializations
+│   ├── firebase/           # Firebase client-side initialization
+│   │   └── client.ts
+│   ├── utils.ts            # General utility functions
+│   ├── constants.ts        # Global constants (e.g., API URLs)
+│   └── auth.ts             # Firebase auth helpers (e.g., signIn, signOut wrappers)
+│
+├── hooks/                  # Custom React Hooks
+│   ├── useAuth.ts
+│   ├── useTasteProfile.ts
+│   └── ...
+│
+├── services/               # Business logic, data fetching, and API integrations
+│   ├── firebase.ts         # Firebase server-side admin logic (if used in API routes)
+│   ├── movie-scraper.ts    # Core scraping logic (e.g., functions for different sites)
+│   ├── llm-service.ts      # Functions for interacting with OpenAI/Google AI
+│   ├── embeddings.ts       # Logic for generating and storing embeddings
+│   ├── vector-db.ts        # Client initialization and query functions for vector DB
+│   └── taste-profile.ts    # Logic for updating and retrieving user taste profiles
+│
+├── types/                  # TypeScript type definitions and interfaces
+│   ├── movie.ts
+│   ├── user.ts
+│   ├── ai.ts
+│   └── ...
+│
+├── styles/                 # Any non-global, non-component-specific CSS (less common with Tailwind)
+│
+├── .env.local              # Environment variables (private, won't be pushed to git)
+├── .env.development.local  # Environment variables for development
+├── .env.production.local   # Environment variables for production
+├── next.config.mjs         # Next.js configuration
+├── package.json            # Project dependencies and scripts
+├── tsconfig.json           # TypeScript configuration
+├── postcss.config.mjs      # PostCSS configuration (for Tailwind)
+└── tailwind.config.ts      # Tailwind CSS configuration
