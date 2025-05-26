@@ -1,0 +1,118 @@
+ Project Description: Tom-Com (AI-Powered Movie & TV Personalizer)
+Tom-Com is a personalized AI-powered movie and TV recommendation web platform. Users log in, set up their genre preferences, and receive curated recommendations. The platform scrapes movie and TV data from multiple online sources based on the selected genres — pulling in metadata, user reviews, summaries, and more.
+
+Once a movie is shown, users can upvote, downvote, or comment, which updates their personal "taste profile" stored privately in Firebase. The taste profile evolves using a combination of GPT-based analysis, embeddings, and RAG (retrieval-augmented generation), allowing the AI to suggest similar or better matching content in the future.
+
+On selecting a movie, users are redirected to a movie detail page where they can chat with an AI assistant, asking questions like “Will I enjoy this?”, “Is it slow-paced?”, or “How emotional is this film?” — and the AI responds using scraped reviews and contextual insights.
+
+The system emphasizes privacy and decentralization by storing user data and preferences individually on their Firebase account, not on a central server. The scraper runs dynamically per user genre interest and feeds the AI engine for hyper-personalized results.
+
+🔑 Core Features (Optional Add-on to Description)
+Genre-based content scraping from external sites
+
+Personalized taste engine using GPT + embeddings
+
+Movie Q&A chat via AI (RAG-style)
+
+Per-user Firebase storage (no global server)
+
+Vote + feedback loop to adapt future suggestions
+
+🧰 Stack Summary (Optional)
+Frontend: Next.js, TailwindCSS, ShadCN/UI
+
+Backend/API: Firebase (Auth, Firestore, Storage)
+
+AI: OpenAI GPT + Embeddings + Vector Matching
+
+Data Layer: TMDb API + Scrapers for reviews/summaries
+
+Storage: Firebase per-user bucket
+
+Future Add-ons: Custom taste vector clustering, genre-based embeddings, FAISS or Pinecone
+
+
+🔧 Tech Stack & Tools for Tom-Com
+🌐 Frontend Framework
+Next.js (v14+ App Router)
+
+File-based routing with layouts
+
+API Routes (Server Actions or Route Handlers)
+
+🎨 Styling
+Tailwind CSS
+
+For utility-first CSS and responsive design
+
+Shadcn/ui
+
+For beautiful, accessible UI components out of the box
+
+🔥 Backend / Serverless
+Firebase (no custom backend needed initially)
+
+🔐 Authentication (Google login, etc.)
+
+☁️ Firestore Database (user profiles, personalization data)
+
+🧠 Cloud Functions (optional) if you ever need async server-side actions
+
+🧠 AI & LLM
+OpenAI API
+
+GPT-4 or GPT-3.5 for movie Q&A, story summaries, similarity scoring
+
+RAG Strategy
+
+Using vector-db.ts to embed reviews or stories for retrieval
+
+Embeddings Model: text-embedding-3-small or openai's ada
+
+Custom Prompt Engineering (you’ll write custom prompts per user taste)
+
+🧰 APIs & External Data
+TMDb API
+
+Movie metadata, images, ratings, genre lists, similar titles
+
+(Optional) Web Scraping
+
+For reviews: Rotten Tomatoes, IMDb, Reddit, etc.
+
+Using cheerio or puppeteer (headless if needed — depends on site structure)
+
+📦 Package Utilities
+TypeScript
+
+Strong typing across API calls, Firebase data, LLM interfaces
+
+Zod or Yup (optional)
+
+Input validation for server routes
+
+SWR or React Query (optional)
+
+For caching and managing data fetching
+
+🧪 Testing
+Jest + Testing Library
+
+Unit tests for hooks, utility functions, and components
+
+Playwright or Cypress (optional)
+
+End-to-end testing, if needed later
+
+📡 Deployment
+Vercel
+
+Perfect for Next.js, fast CI/CD
+
+Firebase Console
+
+For Firestore, Auth, Functions, and Storage management
+
+Dotenv (.env.local)
+
+For storing your API keys and secrets
