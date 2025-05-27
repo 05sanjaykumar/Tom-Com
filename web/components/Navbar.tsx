@@ -23,7 +23,7 @@ export default function Navbar() {
 
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
   const baseLink =
-      'relative text-sm font-medium text-black dark:text-white transition-all duration-200 hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full';
+      'relative text-sm font-medium text-black dark:text-white transition-all duration-200 hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:scale-[1.05] active:scale-[0.97] transform';
 
 
   return (
