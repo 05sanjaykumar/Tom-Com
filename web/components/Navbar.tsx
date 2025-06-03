@@ -56,10 +56,10 @@ export default function Navbar() {
             <div className='flex justify-around min-w-72'>
                 {/* Auth Buttons */}
                 <Button asChild variant="ghost">
-                    <Link href="/sign-in">Sign In</Link>
+                    <Link href="/signin">Sign In</Link>
                 </Button>
                 <Button asChild>
-                    <Link href="/log-in">Log In</Link>
+                    <Link href="/login">Log In</Link>
                 </Button>
 
                 {/* Theme Toggle */}
